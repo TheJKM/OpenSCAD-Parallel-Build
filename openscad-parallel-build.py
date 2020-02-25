@@ -103,7 +103,7 @@ def deleteFolder(folder):
                 shutil.rmtree(file_path)
         except Exception as e:
             print('Failed to delete %s. Reason: %s' % (file_path, e))
-    os.remove(folder)
+    os.rmdir(folder)
 
 # Extract compile jobs from a .scad file
 def extractJobs(file):
