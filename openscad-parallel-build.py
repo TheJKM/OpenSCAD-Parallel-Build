@@ -140,7 +140,7 @@ def extractJobs(file):
 if not len(sys.argv) == 3:
     print("Wrong number of parameters.")
     print("Usage: openscad-parallel-build.py /path/to/source-folder /path/to/destination-folder")
-    sys.exit()
+    sys.exit(1)
 else:
     SOURCE_PATH = sys.argv[1]
     DESTINATION_PATH = sys.argv[2]
@@ -158,7 +158,7 @@ else:
         elif destinationCheck == 1:
             print("Unable to write to destination path. Aborting.")
         print("The script failed due to parameter errors. Check your input and try again.")
-        sys.exit()
+        sys.exit(1)
     else:
         if DESTINATION_PATH.endswith("/"):
             DESTINATION_PATH = DESTINATION_PATH[:-1]
@@ -187,7 +187,7 @@ if os.path.exists(DESTINATION_PATH + "/out"):
         deleteFolder(DESTINATION_PATH + "/out")
     else:
         print("Aborting.")
-        sys.exit()
+        sys.exit(1)
 
 # Create output folder
 os.mkdir(DESTINATION_PATH + "/out")
