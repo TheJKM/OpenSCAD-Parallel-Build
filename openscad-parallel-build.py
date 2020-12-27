@@ -170,7 +170,7 @@ OS = platform.system()
 if OS == "Darwin":
     OPENSCAD_PATH = "/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD"
 elif OS == "Linux":
-    OPENSCAD_PATH = ""
+    OPENSCAD_PATH = "/usr/bin/openscad"
 elif OS == "Windows":
     OPENSCAD_PATH = ""
 while not os.path.exists(OPENSCAD_PATH):
